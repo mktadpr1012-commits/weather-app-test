@@ -7,11 +7,15 @@
 ```
 날씨앱 만들기 실습 폴더/
 ├── backend/
-│   └── server.js      ← 백엔드: 외부 날씨 API 호출 + 프론트엔드 파일 제공
+│   ├── weather.js     ← 백엔드 핵심: 외부 날씨 API 호출 (공용)
+│   └── server.js      ← 로컬 실행용 서버 (날씨 API + 프론트엔드 파일 제공)
+├── api/
+│   └── weather.js     ← Vercel 배포용 백엔드 함수 (backend/weather.js 사용)
 ├── frontend/
 │   ├── index.html     ← 화면 구조
 │   ├── style.css      ← 디자인
 │   └── script.js      ← 버튼 클릭 시 백엔드에 날씨 요청
+├── vercel.json        ← Vercel 설정 (frontend 폴더를 사이트 첫 화면으로 연결)
 └── README.md
 ```
 
@@ -52,6 +56,13 @@
 
 6. **서버 종료**
    서버를 실행한 터미널에서 `Ctrl + C`를 누릅니다.
+
+## Vercel 배포
+
+1. GitHub 저장소를 Vercel에서 Import 합니다.
+2. Framework Preset은 **Other**, Build/Output 설정은 비워 둔 채로 Deploy 합니다.
+3. Vercel은 `api/weather.js`를 백엔드 함수로, `vercel.json`에 따라 `frontend/` 폴더를 첫 화면으로 사용합니다.
+4. 이후 GitHub에 push 하면 자동으로 다시 배포됩니다.
 
 ## 참고
 
