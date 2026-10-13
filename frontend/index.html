@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>날씨 확인</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>🌦️ 오늘의 날씨</h1>
+
+    <form id="weather-form">
+      <input type="text" id="city-input" placeholder="도시 이름 (예: 서울, Busan, Tokyo)" autocomplete="off">
+      <button type="submit" id="search-btn">날씨 확인</button>
+    </form>
+
+    <p id="message" class="message"></p>
+
+    <section id="result" class="result hidden">
+      <h2 id="city-name"></h2>
+      <div class="main-info">
+        <span id="weather-icon" class="icon"></span>
+        <span id="temperature" class="temp"></span>
+      </div>
+      <p id="description" class="description"></p>
+      <ul class="details">
+        <li>체감 온도 <strong id="feels-like"></strong></li>
+        <li>습도 <strong id="humidity"></strong></li>
+        <li>풍속 <strong id="wind"></strong></li>
+      </ul>
+      <p id="updated" class="updated"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
